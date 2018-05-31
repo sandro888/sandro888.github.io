@@ -6,22 +6,56 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>sandro hub</title> 
     <style>
-        body{
-            background-image: url("1.jpg");
-            background-repeat: no-repeat;
-            text-align: center;
-            background-size: cover;
+body{
+    background-image: url("1.jpg");
+    background-repeat: no-repeat;
+    text-align: center;        
+    background-size: cover;
 
         }
+   
+nav a {
+    position: relative;
+    display: inline-block;
+    margin: 15px 25px;
+    outline: none;
+    color: #fff;
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 300;
+    text-shadow: 0 0 1px rgba(255,255,255,0.3);
+    font-size: 1.35em;
+}
+.cl-effect-10 a::before {
+    position: absolute;
+    top: 0;
+    left: -9px;
+    z-index: -1;
+    padding: 0px 7px;
+    width: 100%;
+    height: 100%;
+    background: cadetblue;
+    color: black;
+    content: attr(data-hover);
+    }
+    a:hover {
+    color: navy;
+}
+
+ 
+        
+     
+ 
        
     
     </style>
     
 <body>  
-        
+    
         <h1>დავალებები</h1>   
-
-        <a href="https://github.com/sandro888/sandro888.github.io/tree/master/5%20MAY" title="5 may">5 MAY</a>
+    <nav class="cl-effect-10">
+        <a href="https://github.com/sandro888/sandro888.github.io/tree/master/5%20MAY"  title="5 may">5 MAY</a>
         <br>
         <a href="https://github.com/sandro888/sandro888.github.io/tree/master/15%20MAY" title="15 may">15 MAY</a>
         <br>
@@ -30,7 +64,7 @@
         <a href="https://github.com/sandro888/sandro888.github.io/tree/master/23%20MAY" title="23 may">23 MAY</a>
         <hr>
 
-
+   </nav>
 
 
 </body>
