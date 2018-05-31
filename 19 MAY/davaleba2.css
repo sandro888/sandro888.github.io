@@ -1,0 +1,35 @@
+
+ul{
+    float: left;
+    top: 0%;
+
+}
+div ul{
+    float: right;
+    margin-left: 10px;
+}
+
+h2.right {
+    text-align: right;
+}
+
+article {
+    
+    line-height: 1.5em;
+    margin-left: auto;
+    margin-right: auto;
+   width: 50rem;;
+    padding-left: 5%;
+    padding-right: 5%;
+    padding-top: 0%;
+    
+}
+img{
+    width: 300px;
+    height: 400px;
+}
+footer{
+    background-color: green;
+    color: whitesmoke;
+    height: 50px;
+}
