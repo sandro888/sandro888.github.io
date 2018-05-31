@@ -1,0 +1,29 @@
+*{
+    margin:0;
+    padding: 0;
+    box-sizing: border-box;
+
+}
+body{
+    margin-left: 300px; 
+    margin-right: 300px;
+    
+}
+header{
+   
+    border:2px solid black;
+    height: 200px;
+   
+}
+
+.column{
+    width: 33.33%;
+    height: 450px;
+    float: left;
+    
+    border:2px solid black;
+
+
+}
+
+

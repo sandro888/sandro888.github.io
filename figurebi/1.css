@@ -1,0 +1,25 @@
+*{
+    margin:0;
+    padding: 0;
+    box-sizing: border-box;
+
+}
+header{
+   
+    border:2px solid black;
+    height: 200px;
+    margin-left: 300px;
+    margin-right: 300px;
+}
+main{
+    border:2px solid black;
+    height: 200px;
+    margin-left: 300px;
+    margin-right: 300px;
+}
+footer{
+    border:2px solid black;
+    height: 200px;
+    margin-left: 300px;
+    margin-right: 300px;
+}
