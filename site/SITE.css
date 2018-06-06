@@ -1,0 +1,89 @@
+.header{
+    border: 1px solid rgb(233, 229, 229);
+    height: 114px;
+    background-color: rgb(248, 248, 248)
+}
+body {
+    margin: 0;
+  }
+  
+a img{
+    width: 140px;
+    height: 48px;
+    
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: 140px 600px 450px 80px ;
+    grid-gap: 10px;
+    padding: 10px;
+}
+  
+
+
+
+.search{    
+    box-shadow: 1px 1px 1px 1px rgb(145, 158, 170);
+    width: 600px;
+    height: 44px;
+    font-size: 22px;
+    border: none; 
+    padding: 0px; 
+    margin: 0px; 
+    background:  transparent; 
+    position: absolute; 
+    z-index: 6; 
+    left: 0px; 
+    outline: none;
+}
+.gsfi:hover{
+    box-shadow: rgba(77, 65, 65, 0.8);
+
+
+}
+.grid-container2{
+    cursor: pointer;
+    display: grid;
+    grid-template-columns: 160px 75px 75px 75px 75px 75px 75px 75px 75px ;
+    color: gray;
+    text-align: center;
+}
+.search:hover{
+    box-shadow: 1px 1px 1px 1px rgb(145, 158, 170);
+
+}
+.grid-container3{
+    display: grid;
+    grid-template-columns: 160px 600px auto  ;
+    color: rgb(15, 15, 131);
+    font-size: 20px;
+    font-weight: unset ;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.item3:hover,.item4:hover,.item5:hover,.item6:hover,.item7:hover,.item8:hover,.item9:hover,.item10:hover{
+    box-shadow: 0px 3px 0px 0px rgb(83, 181, 211);
+    color: rgb(83, 181, 211);
+}
+a{
+   
+        text-decoration: none;}
+  
+    
+  
+    
+a:hover {
+        text-decoration: underline;
+    
+}
+.button{
+    color:white;
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+    height: 25px;
+    font-size: 19px;
+    margin-top:8px;
+    padding: 2px;
+    background-color: rgb(104, 139, 255)
+}
