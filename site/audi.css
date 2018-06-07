@@ -3,7 +3,7 @@ body {
   }
 .header{
     border: 1px solid rgb(233, 229, 229);
-    height: 75px;
+    height: 74px;
     background-color: rgb(15, 14, 14);
 }
 .grid-container1{
@@ -30,26 +30,33 @@ body {
    
 
 }
-.grid-container2{
-    cursor: pointer;
-    display: grid;
-    grid-template-columns:100% ;
-    color: white;
-    
 
-}
 .centered{
     font-family: Arial, Helvetica, sans-serif;    
     text-transform: uppercase;
     letter-spacing: 0.2em;
     position: absolute;
-    text-align: center;
+    color: rgb(250, 245, 236);
     font-size: 15px;
     top: 50%;
-		left: 50%;
-		transform: translate(-50%, -50%);
-    
+	left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    cursor: pointer
+  
     
 
 
+
+}
+.icons{
+    cursor: pointer;
+    display: grid;
+    grid-template-columns:100px 1100px 100px;
+    color: rgb(230, 227, 227)
+   
+
+}
+.left:hover,.right:hover{
+    color: rgba(255, 255, 255, 0.644)
 }
