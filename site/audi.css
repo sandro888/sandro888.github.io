@@ -9,7 +9,7 @@ body {
 .grid-container1{
     cursor: pointer;
     display: grid;
-    grid-template-columns:120px 120px 120px 120px 120px 120px 120px 120px 100px 100px ;
+    grid-template-columns:120px 150px 120px 120px 120px 120px 120px 120px 70px 70px 100px 100px ;
     color: white;
     text-align: center;
     padding: 10px; 
@@ -60,3 +60,30 @@ body {
 .left:hover,.right:hover{
     color: rgba(255, 255, 255, 0.644)
 }
+.text{
+    font-family: Normal, Helvetica, Arial, sans-serif;  
+    letter-spacing: 0.2em;
+
+    text-align: center;
+}
+
+
+.im-3 { grid-area: menu; }
+.im-1 { grid-area: main; }
+.im-2 { grid-area: footer; }
+
+
+.grid-container2 {
+  display: grid;
+  grid-template-areas:
+    
+    'main main main menu  '
+    'footer footer footer menu   ';
+  padding: 75px;
+  grid-template-rows:250px 0px 400px  ;
+
+}
+
+
+
+
