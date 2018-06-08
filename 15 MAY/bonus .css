@@ -1,0 +1,51 @@
+#circle{
+    height: 30px;
+    width: 30px;
+    background-color:gold;
+    
+    border-radius: 50%; 
+    
+}
+#circle2{
+    height: 30px;
+    width: 30px;
+    background-color: blue;
+    border-radius: 50%;    
+}
+#circle3{
+    height: 30px;
+    width: 30px;
+    background-color: red;
+    border-radius: 50%; 
+}
+#circle4{
+    height: 30px;
+    width: 30px;
+    background-color: darkmagenta;
+    border-radius: 50%;    
+}
+.square {
+
+    border: 5px solid black;
+    text-align: center;
+    width: 10vw;
+    height: 10vw;
+}   
+#circle:hover ~ .square{
+    background-color: gold;
+
+}    
+#circle2:hover ~ .square{
+    background-color: blue;
+
+}    
+#circle3:hover ~ .square{
+    background-color: red;
+
+}    
+#circle4:hover ~ .square{
+    background-color: darkmagenta;
+}    
+    
+    
+
