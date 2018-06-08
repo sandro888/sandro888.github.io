@@ -80,7 +80,7 @@ body {
     'main main main menu  '
     'footer footer footer menu   ';
   padding: 75px;
-  grid-template-rows:250px 0px 250px  ;
+  grid-template-rows:300px 0px 300px  ;
 
 }
 
@@ -120,12 +120,8 @@ h6{
     color: gray;
     text-align: center;
 }
-@media only screen and (max-width: 768px) {
-    /* For mobile phones: */
-    [class*="col-"] {
-        width: 100%;
-    }
-}
+
+
 
 
 
