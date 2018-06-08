@@ -1,0 +1,116 @@
+body{
+    background: linear-gradient(260deg, #2376ae 0%, #57606f 100%);
+    color:#dfe6e9;
+    font-size:1.1em;
+    font-family: 'Helvetica Neue',Arial, Helvetica, sans-serif;
+    width: 1000px;
+
+}
+
+.topleft{
+    height:150px;
+    width: 450px;
+    display: inline-block;
+    background-color: white;
+    text-align:center;
+    border: 1px solid white;
+
+}
+
+.topright{
+    height:150px;
+    width: 450px;
+    display: inline-block;
+    background-color: white;
+    margin-top: 20px;
+    text-align:center;
+    border: 1px solid white;
+}
+
+.mid{
+    height:150px;
+    width: 900px;
+    background-color: white;
+    margin-top: 20px;
+    text-align:center;
+    border: 1px solid white;
+}
+
+.mid2{
+    height:150px;
+    width: 295px;
+    background-color: white;
+    margin-top: 20px;
+    text-align:center;
+    display: inline-block;
+    border: 1px solid white;
+
+}
+
+.bot{
+    height:150px;
+    width: 220px;
+    background-color: white;
+    margin-top: 20px;
+    text-align:center;
+    display: inline-block;
+    border: 1px solid white;
+
+
+}
+@media screen and (max-width:800px){
+    .topleft{
+        background-color: black;
+        height: 150px;
+        width: 750px;
+
+    }
+    .topright{
+        background-color: black;
+        height: 150px;
+        width: 750px;       
+    }
+
+    .mid{
+        height:150px;
+        width: 750px;
+    }
+    .mid2{
+        height:150px;
+        width: 750px;
+        background-color: black;
+    }    
+    .bot{
+        background-color: white;
+        height: 150px;
+        width: 370px;
+        border: 1px solid white;
+    }
+}
+@media screen and (max-width:600px){
+    .topleft{
+        background-color: black;
+        height: 150px;
+        width: 500px;
+    }
+    .topright{
+        background-color: black;
+        height: 150px;
+        width: 500px;
+    }
+    .mid{
+        background-color: white;
+        height: 150px;
+        width: 500px;
+    }
+    .mid2{
+        background-color: rgb(0, 0, 0);
+        height: 150px;
+        width: 500px;
+    }
+    .bot{
+        background-color: white;
+        height: 150px;
+        width: 500px;
+    }
+}
