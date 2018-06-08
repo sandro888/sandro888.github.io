@@ -219,17 +219,6 @@ h6{
        
     }
 }
-@media screen and (max-width:450){
-    .grid-container1{
-        grid-template-columns:90px 60px 90px 90px 90px 90px 90px 90px 40px 30px 90px 90px;
-
-    }
-
-
-
-
-
-}
 
 
 
