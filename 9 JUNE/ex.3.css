@@ -59,14 +59,14 @@ body{
 @media screen and (max-width:1000px){
     .grid-container{
         display: grid;
-        grid-template-columns: 200px 700px;
+        grid-template-columns: 210px 700px;
         grid-gap: 10px;
       
         height: 100px;
     }
     .grid-container1{
         display: grid;
-        grid-template-columns:  910px;
+        grid-template-columns:  920px;
         margin-top:20px;
         height: 90px;
         
