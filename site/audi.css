@@ -211,10 +211,10 @@ footer{
   }
   .main-nav{
     background-color: black;
-    height: 430px;
+    height: 450px;
   }
   .head h1 {
-    font-size: 2.5rem;
+    font-size: 2rem;
   }
   .main-nav ul {
     grid-template-columns: 1fr;
