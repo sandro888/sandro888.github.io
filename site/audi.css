@@ -2,11 +2,27 @@
   --primary: rgb(240, 240, 240);
   --shadow: 0 1px 5px rgba(104, 104, 104, 0.8);
   }
+<<<<<<< HEAD
   
 html {
   box-sizing: border-box;
   font-family: Arial, Helvetica, sans-serif;
   color: rgb(46, 45, 45);
+=======
+.header{
+    border: 1px solid rgb(233, 229, 229);
+    height: 74px;
+    background-color: rgb(15, 14, 14);
+  
+}
+.grid-container1{
+    cursor: pointer;
+    display: grid;
+    grid-template-columns:120px 150px 120px 120px 120px 120px 120px 120px 70px 70px 100px 100px ;
+    color: white;
+    text-align: center;
+    padding: 10px; 
+>>>>>>> cf53c36d134a6ab40eff03776c8a7c4492c37955
 }
   
 body {
