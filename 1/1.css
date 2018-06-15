@@ -18,6 +18,7 @@ main{
     margin-right: 300px;
 }
 footer{
+    border:2px solid black;
     height: 200px;
     margin-left: 300px;
     margin-right: 300px;
