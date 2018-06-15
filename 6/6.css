@@ -1,0 +1,41 @@
+
+body{
+    margin-left: 100px; 
+    margin-right: 100px; 
+    border: 1px solid black ;
+    height: 600px;
+}
+header{  
+    border:1px solid black;
+    height: 200px; 
+}
+
+aside.ex1{
+    border:1px solid black;
+    float: left;
+    width: 25%;   
+    height: 250px;
+      
+}
+aside.ex3{
+    border:1px solid black;
+    margin: 0 25%;
+    height: 90px;
+    
+}
+aside.ex2{
+   border:1px solid black;
+   float:right;
+   width: 25%;    
+   height: 250px;
+}
+footer{
+    border:1px solid black;
+    height:145px; 
+    clear: both;
+
+}
+
+
+
+

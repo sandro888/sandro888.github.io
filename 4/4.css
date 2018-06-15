@@ -1,0 +1,33 @@
+
+body{
+    margin-left: 300px; 
+    margin-right: 300px; 
+    border: 1px solid black ;
+}
+header{  
+    border:1px solid black;
+    height: 200px;
+    width: 100%; 
+    float: right;
+}
+div.ex1{
+    border:1px solid black;
+    
+    width: 180px;
+    height: 450px;
+
+      
+}
+
+main{
+    width: 200px;
+    height: 250px;
+    float: right;
+    border:1px solid black;
+}
+
+footer{
+    border:1px solid black;
+    height: 200px;
+    clear: both;
+}
