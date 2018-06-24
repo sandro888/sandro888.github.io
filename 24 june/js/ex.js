@@ -1,6 +1,6 @@
 function Calculator(){
-    this["+"] = (a,b)  => a+b
-    this["-"] = (a,b)  => a-b
+    this["+"] =(a,b)=> a+b
+    this["-"] =(a,b)=> a-b
     this.calculate = function (str) {
     let string = str.split(" ")
     // operacias gamovyoft 
@@ -19,9 +19,9 @@ alert(minus);
 
 let powerCalc =new Calculator;
 
-powerCalc.addMethod("*" ,(a, b) => a*b)
-powerCalc.addMethod("**" ,(a, b) => a**b)
-powerCalc.addMethod("/" ,(a, b) => a/b)
+powerCalc.addMethod("*" ,(a,b)=> a*b)
+powerCalc.addMethod("**" ,(a,b)=> a**b)
+powerCalc.addMethod("/" ,(a,b)=> a/b)
 let mult = powerCalc.calculate("2 * 3")
 alert(mult); 
 let divide = powerCalc.calculate("2 / 3")
