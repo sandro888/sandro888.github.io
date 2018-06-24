@@ -10,7 +10,7 @@ function Calculator(){
         this[name]=func
     }    
 }
-var calc = new Calculator;
+let calc = new Calculator;
 
 let plus = calc.calculate("8 + 4")
 alert(plus);
