@@ -13,10 +13,10 @@ function Calculator(){
 }
 var calc = new Calculator;
 
-let add = calc.calculate("2 + 3");
-alert(add);
-let subt= calc.calculate("2 - 3");
-alert(subt);
+let plus = calc.calculate("2 + 3");
+alert(plus);
+let minus= calc.calculate("2 - 3");
+alert(minus);
 
 let powerCalc =new Calculator;
 
