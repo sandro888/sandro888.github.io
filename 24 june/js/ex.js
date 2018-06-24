@@ -13,9 +13,9 @@ function Calculator(){
 }
 var calc = new Calculator;
 
-let plus = calc.calculate("2 + 3");
+let plus = calc.calculate("8 + 4");
 alert(plus);
-let minus= calc.calculate("2 - 3");
+let minus= calc.calculate("8 - 4");
 alert(minus);
 
 let powerCalc =new Calculator;
