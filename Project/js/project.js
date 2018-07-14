@@ -22,7 +22,7 @@ document.querySelector(".add").addEventListener("click", function(){
         
         //applying zeros in all cells as default
         for(let i=0; i< c.length; i++) {
-         c[i].textContent ="0";
+            c[i].textContent ="0";
         }
         
         //appending elements to b element
