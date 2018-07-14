@@ -21,9 +21,9 @@ document.querySelector(".add").addEventListener("click", function(){
         //appending elements to b element
         b.appendChild(d);
         d.addEventListener("click",function(e){
-           
+            
             let input=prompt("add number");
-            d.innerHTML = Number(input);
+            d.textContent = Number(input);
             
             
             if(input<=5){

@@ -28,7 +28,7 @@ body {
     padding: 1.2rem 1.4rem;
     box-shadow: var(--shadow);
   }
-.one,.two,.three{
+.one,.two,.three,.four{
     font-size: 20px;
     color:#2f3542;
       
