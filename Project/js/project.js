@@ -18,6 +18,7 @@ document.querySelector(".add").addEventListener("click", function(){
         
         d.setAttribute("class", "table-cell2");
         d.setAttribute("id", `date${i}`);
+        
         //appending elements to b element
         b.appendChild(d);
         d.addEventListener("click",function(e){
@@ -63,7 +64,7 @@ var month = date.getMonth();
 
 var time = document.createElement('div');
 time.innerHTML = months[3] + " " + 30;
-document.getElementById('date1').appendChild(time).stepUp(5);;
+document.getElementById('date0').appendChild(time).stepUp(5);;
 
 
 
