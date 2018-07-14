@@ -15,9 +15,15 @@ document.querySelector(".add").addEventListener("click", function(){
     for(let i=0; i<11; i++) {
         let d = document.createElement("div");
         //creating div with class "table-cell2 " in the b
-        
+         
         d.setAttribute("class", "table-cell2");
         d.setAttribute("id", `date${i}`);
+        let c = document.getElementsByClassName("table-cell2")
+        
+        //applying zeros in all cells as default
+        for(let i=0; i< c.length; i++) {
+         c[i].textContent ="0";
+        }
         
         //appending elements to b element
         b.appendChild(d);
@@ -57,14 +63,14 @@ document.querySelector(".remove").addEventListener("click", function(){
 
 
 //
-var months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
-var date = new Date();
-var day = date.getDate();
-var month = date.getMonth();
+// var months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
+// var date = new Date();
+// var day = date.getDate();
+// var month = date.getMonth();
 
-var time = document.createElement('div');
-time.innerHTML = months[3] + " " + 30;
-document.getElementById('date0').appendChild(time).stepUp(5);;
+// var time = document.createElement('div');
+// time.innerHTML = months[3] + " " + 30;
+// document.getElementById('date0').appendChild(time).stepUp(5);;
 
 
 
