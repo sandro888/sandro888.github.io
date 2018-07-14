@@ -50,8 +50,8 @@ document.querySelector(".add").addEventListener("click", function(){
 // this function adds click event to button and remove columns
 
 document.querySelector(".remove").addEventListener("click", function(){
-    var elem = document.getElementById("date");
-    elem.remove();
+    var elem = document.getElementsByClassName("table2");
+    elem[elem.length-1].remove();
    
 });
 
