@@ -25,6 +25,7 @@ document.querySelector(".add").addEventListener("click", function(){
             c[i].textContent ="0";
         }
         
+        
         //appending elements to b element
         b.appendChild(d);
         d.addEventListener("click",function(e){
