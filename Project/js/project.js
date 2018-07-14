@@ -1,16 +1,24 @@
-// this function adds click event to button and add columns
 
+// this function adds click event to button and add columns
 document.querySelector(".add").addEventListener("click", function(){
     let a=document.querySelector(".container");
     let b=document.createElement("div");
+    //creating div with class "table2" in container
+    
     b.setAttribute("class", "table2");
+    
+    //also assigning to the same div id "date"
     b.setAttribute("id", "date");
+    
     a.appendChild(b);
     
     for(let i=0; i<11; i++) {
         let d = document.createElement("div");
+        //creating div with class "table-cell2 " in the b
+        
         d.setAttribute("class", "table-cell2");
         d.setAttribute("id", "date1");
+        //appending elements to b element
         b.appendChild(d);
         d.addEventListener("click",function(e){
            
