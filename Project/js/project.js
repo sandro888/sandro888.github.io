@@ -15,9 +15,9 @@ document.querySelector(".add").addEventListener("click", function(){
         d.addEventListener("click",function(e){
            
             let input=prompt("add number");
-            d.textContent = Number(input);
+            d.innerHTML = Number(input);
             
-           
+            
             if(input<=5){
                 d.style.backgroundColor="#05c46b"
             }
@@ -33,15 +33,8 @@ document.querySelector(".add").addEventListener("click", function(){
 
             }
             
-
-
-
             
-           
-            
-           
-            
-            
+    
         });
     }
 });
@@ -54,29 +47,15 @@ document.querySelector(".remove").addEventListener("click", function(){
 });
 
 
-function ave(){
-    let average = querySelector(".tabel-cell");
-    const average = arr => arr.reduce((input,input) => input + input, 0) / arr.length 
-}
+//
+var months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
+var date = new Date();
+var day = date.getDate();
+var month = date.getMonth();
 
-
-
-
-
-
-
-
-
-
-
-// var months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
-// var date = new Date();
-// var day = date.getDate();
-// var month = date.getMonth();
-
-// var time = document.createElement('div');
-// time.innerHTML = months[3] + " " + 30;
-// document.getElementById('date').appendChild(time).stepUp(5);;
+var time = document.createElement('div');
+time.innerHTML = months[3] + " " + 30;
+document.getElementById('date1').appendChild(time).stepUp(5);;
 
 
 
