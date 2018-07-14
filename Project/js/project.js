@@ -1,6 +1,7 @@
 
 // this function adds click event to button and add columns
 document.querySelector(".add").addEventListener("click", function(){
+    
     let a=document.querySelector(".container");
     let b=document.createElement("div");
     //creating div with class "table2" in container
@@ -12,16 +13,20 @@ document.querySelector(".add").addEventListener("click", function(){
     
     a.appendChild(b);
     
+    
     for(let i=0; i<11; i++) {
         let d = document.createElement("div");
         //creating div with class "table-cell2 " in the b
          
         d.setAttribute("class", "table-cell2");
         d.setAttribute("id", `date${i}`);
+        
+       
         let c = document.getElementsByClassName("table-cell2")
         
+        
         //applying zeros in all cells as default
-        for(let i=0; i< c.length; i++) {
+        for(let i=1; i< c.length; i++) {
             c[i].textContent ="0";
         }
         
@@ -48,12 +53,34 @@ document.querySelector(".add").addEventListener("click", function(){
                 d.innerHTML="0";
 
             }
+            let daymay=getElementById("date0")
+            daymay.textContent=day()
+            var date =new Date(2018,3,30);
+            function day(){
+            if(date.getDay()==1 || getDay()==3 || date.getDay() == 5){
+                date=new Date(date.getTime()+2*(24*60*1000));
+               
+            }
+            else if(date.getDay()==6){
+                date=new Date(date.getTime()+(24*60*1000));
+
+            }
+        
+        }
             
-            
+        document.getElementById("date0").appendChild(date)
+
     
         });
+        
+        
     }
+    
 });
+
+
+            
+
 // this function adds click event to button and remove columns
 
 document.querySelector(".remove").addEventListener("click", function(){
@@ -62,16 +89,11 @@ document.querySelector(".remove").addEventListener("click", function(){
    
 });
 
+ 
 
-//
-// var months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
-// var date = new Date();
-// var day = date.getDate();
-// var month = date.getMonth();
 
-// var time = document.createElement('div');
-// time.innerHTML = months[3] + " " + 30;
-// document.getElementById('date0').appendChild(time).stepUp(5);;
+   
+    
 
 
 
