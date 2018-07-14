@@ -17,7 +17,7 @@ document.querySelector(".add").addEventListener("click", function(){
         //creating div with class "table-cell2 " in the b
         
         d.setAttribute("class", "table-cell2");
-        d.setAttribute("id", "date1");
+        d.setAttribute("id", `date${i}`);
         //appending elements to b element
         b.appendChild(d);
         d.addEventListener("click",function(e){
