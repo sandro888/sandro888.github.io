@@ -1,0 +1,124 @@
+.one{
+    justify-content: center;
+    display: flex;
+    padding: 5px;
+}
+.two{
+    display: flex;
+    padding: 5px;
+    justify-content: center;
+}
+.three{
+    display: flex;
+    padding: 5px;
+    justify-content: center;
+}
+.four{
+    display: flex;
+    padding: 5px;
+    justify-content: center;
+}
+.first{
+    background-color: #706fd3;
+    box-sizing: border-box;
+    padding: 4.6em 4.0em;
+    margin-right: 10px;
+}
+.second{
+    background-color: #218c74;
+    box-sizing: border-box;
+    padding: 4.6em 4.0em;
+    margin-right: 10px;
+}
+.third{
+    background-color: #ff5252;
+    box-sizing: border-box;
+    padding: 4.6em 4.0em;
+}
+.first1{
+    background-color: #ffb142;
+    box-sizing: border-box;
+    padding: 4.6em 4.0em;
+    margin-right: 10px;
+}
+.second1{
+    background-color: rgb(22, 4, 105);
+    box-sizing: border-box;
+    padding: 4.6em 4.0em;
+    margin-right: 10px;
+}
+.third1{
+    background-color: #44bd32;
+    box-sizing: border-box;
+    padding: 4.6em 4.0em;
+    
+}
+.first2{
+    background-color: #00a8ff;
+    box-sizing: border-box;
+    padding: 4.6em 4.0em;
+    margin-right: 10px;
+}
+.second2{
+    background-color: #353b48;
+    box-sizing: border-box;
+    padding: 4.6em 4.0em;
+    margin-right: 10px;
+}
+.third2{
+    background-color: #6D214F;
+    box-sizing: border-box;
+    padding: 4.6em 4.0em;
+}
+.first3{
+    border:1px solid black;
+    height: 80px;
+    box-sizing: border-box;
+    padding: 4.6em 4.0em;
+    margin-right: 10px;
+}
+.second3{
+    border:1px solid black;
+    height: 80px;
+    box-sizing: border-box;
+    padding: 4.6em 4.0em;
+    margin-right: 10px;
+}
+.third3{
+    border:1px solid black;
+    height: 80px;
+    box-sizing: border-box;
+    padding: 4.6em 4.0em;
+}
+ /*.add {
+    border-radius: 5px;
+    background-color: #eb2f06;
+    border: none;
+    color: #FFFFFF;
+    text-align: center;
+    font-size: 15px;
+    padding: 15px;
+    width: 150px;
+    transition: all 0.5s;
+    cursor: pointer;
+    margin: 10px;
+}
+.add span {
+    cursor: pointer;
+    position: relative;
+    transition: 0.5s;
+}
+.add span:after{
+    content: '\00bb';
+    position: absolute;
+    opacity: 0;
+    right: -20px;
+    transition: 0.2s;
+}
+.add:hover span {
+    padding-right: 25px;
+}
+.add:hover span:after {
+    opacity: 1;
+    right: 0;
+} */
