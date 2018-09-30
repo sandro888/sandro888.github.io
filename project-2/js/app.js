@@ -162,6 +162,20 @@ class Snake {
     this.board.pop();
 
   };
+  drawSnake() {
+    ctx.fillStyle = "#6c5ce7";
+    this.board.forEach(function (boardSegment) {
+      ctx.fillRect(boardSegment.x, boardSegment.y, S, S);
+  
+      localStorage.getItem("Speed");
+      localStorage.setItem("Speed", speed);
+  
+  
+      localStorage.getItem("Snakes Size");
+      localStorage.setItem("Snake Size", snakeSize);
+  
+    });
+  };
 }
 // function Snake() {
 //   // snake starts moving at cordinates (x= 100, y=0) 
@@ -180,7 +194,7 @@ class Snake {
 //     this.DirectionY = y * S;
 //   }
 // };
-let snake = new Snake()
+
 // this method update snake cordinates
 // Snake.prototype.updateSnakePos = function () {
 //   // new cordinates equals old cordinates + current one
@@ -228,21 +242,22 @@ let snake = new Snake()
 // };
 // This method draws the snake using its coordinates
 
-Snake.prototype.drawSnake = function () {
-  ctx.fillStyle = "#6c5ce7";
-  this.board.forEach(function (boardSegment) {
-    ctx.fillRect(boardSegment.x, boardSegment.y, S, S);
+// Snake.prototype.drawSnake = function () {
+//   ctx.fillStyle = "#6c5ce7";
+//   this.board.forEach(function (boardSegment) {
+//     ctx.fillRect(boardSegment.x, boardSegment.y, S, S);
 
-    localStorage.getItem("Speed");
-    localStorage.setItem("Speed", speed);
+//     localStorage.getItem("Speed");
+//     localStorage.setItem("Speed", speed);
 
 
-    localStorage.getItem("Snakes Size");
-    localStorage.setItem("Snake Size", snakeSize);
+//     localStorage.getItem("Snakes Size");
+//     localStorage.setItem("Snake Size", snakeSize);
 
-  });
-};
+//   });
+// };
 // drawing food
+let snake = new Snake()
 Food.prototype.drawFood = function () {
 
   ctx.fillStyle = "#00a8ff";
