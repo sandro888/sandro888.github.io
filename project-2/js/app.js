@@ -67,9 +67,9 @@ function speedPick() {
 }
 speedPick();
 function changeSize() {
-  var canvas = document.getElementById("snakeCanvas");
-  var line = document.getElementById("width").value;
-  var cols = document.getElementById("height").value;
+  canvas = document.getElementById("snakeCanvas");
+  this.line = document.getElementById("width").value;
+  this.cols = document.getElementById("height").value;
   window.cnv = null;
   // resize the canvas
   this.Width = canvas.width = line;
@@ -77,9 +77,9 @@ function changeSize() {
   canvas.style.border = " 4px solid rgb(167, 157, 157)";
   if (canvas.getContext) {
     window.cnv = canvas.getContext("2d");
-    canvas();
+    dcanvas();
   }
-  function canvas() {
+  function dcanvas() {
     cnv.strokeStyle = "olive";
     // put the text in the canvas
   }
@@ -125,6 +125,19 @@ class Snake {
     let newPosY = this.board[0].y + this.DirectionY;
 
     //  if x cordintes is off from canvas it dies 
+    // if (newPosX < 0) {
+    //   return "die";
+    // }
+    // else if (newPosX > line.value - S) {
+    //   return "die"
+    // }
+    // // if y cordintes is off from canvas it dies
+    // if (newPosY < 0) {
+    //   return "die";
+    // }
+    // else if (newPosY >cols.value- S) {
+    //   return "die"
+    // }
     if (newPosX < 0) {
       return "die";
     }
@@ -135,7 +148,7 @@ class Snake {
     if (newPosY < 0) {
       return "die";
     }
-    else if (newPosY > height - S) {
+    else if (newPosY >height- S) {
       return "die"
     }
 
