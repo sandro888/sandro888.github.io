@@ -106,7 +106,7 @@ function keyFunction(event) {
 // let snake = new Snake(); // createing Snake object
 let food = new Food();    // creating food object
 class Snake{
-  constructor(board,DirectionX,DirectionY){
+  constructor(){
      // snake starts moving at cordinates (x= 100, y=0) 
   this.board = [{ x: 100, y: 0 }];
   // at the beggining snake moves up to down
