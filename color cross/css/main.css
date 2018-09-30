@@ -1,0 +1,11 @@
+div{
+    border: 1px solid black;
+}
+.container {
+    display: grid;
+    grid-template-rows: repeat(6, 70px);
+    grid-template-columns: repeat(6, 120px);
+    width: 720px;  
+    margin-left: auto;
+    margin-right: auto;
+  }
