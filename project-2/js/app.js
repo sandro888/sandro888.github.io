@@ -79,15 +79,12 @@ function changeSize() {
     window.cnv = canvas.getContext("2d");
     canvas();
   }
-
-
   function canvas() {
     cnv.strokeStyle = "olive";
     // put the text in the canvas
   }
 
-  // window.onload=function(){
-  //   changeSize();
+
 };
 // by arrow keys changing snkaes direction
 function keyFunction(event) {
