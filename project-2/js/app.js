@@ -10,8 +10,8 @@ style.marginRight = "auto";
 let parentStyle = canvas.parentElement.style;
 parentStyle.textAlign = "center";
 parentStyle.width = "100%";
-let width = 500;
-let height = 400;
+let width;
+let height ;
 let S = 20;           // square of one grid block
 let score = 0;
 let speed = 100;                     // snake  speed frame/per/second. 
@@ -66,7 +66,29 @@ function speedPick() {
 
 }
 speedPick();
+function changeSize(){
+  var canvas = document.getElementById("snakeCanvas");
+  var line   = document.getElementById("width").value;
+  var cols   = document.getElementById("height").value;
+  window.cnv = null;  
+  // resize the canvas
+  this.Width = canvas.width = line ; 
+  this.Height = canvas.height = cols ; 
+  canvas.style.border = " 4px solid rgb(167, 157, 157)"; 
+  if (canvas.getContext) { 
+    window.cnv = canvas.getContext("2d");
+    canvas();
+  }
 
+
+function canvas(){
+      cnv.strokeStyle = "olive";
+      // put the text in the canvas
+}
+
+// window.onload=function(){
+//   changeSize();
+};
 // by arrow keys changing snkaes direction
 function keyFunction(event) {
   console.log("snake x: " + snake.board[0].x + ", y: " + snake.board[0].y);
@@ -83,8 +105,7 @@ function keyFunction(event) {
 }
 let snake = new Snake(); // createing Snake object
 let food = new Food();    // creating food object
-// animation loop
-// Animation = requestAnimationFrame(animate);
+
 function Snake() {
   // snake starts moving at cordinates (x= 100, y=0) 
   this.board = [{ x: 100, y: 0 }];
@@ -126,7 +147,7 @@ Snake.prototype.updateSnakePos = function () {
   }
 
   // ifsankes hits himself this means snakes new position is alrady exist end game
-  // we use filter to check ifarray contains a match cordinates
+  // = use filter to check ifarray contains a match cordinates
   let SelfCrash = this.board.filter(function (boardSegment) {
     return boardSegment.x === newPosX && boardSegment.y === newPosY;
   });
@@ -139,7 +160,7 @@ Snake.prototype.updateSnakePos = function () {
   // if snakes stays alive adding new cordinates 
   this.board.unshift({ x: newPosX, y: newPosY });
   // checking coediantes
-  if (newPosX === food.x && newPosY === food.y) {
+  if (newPosX === food.x && newPosY=== food.y) {
     return "eat";
   }
 
@@ -148,7 +169,6 @@ Snake.prototype.updateSnakePos = function () {
   this.board.pop();
 
 };
-
 // This method draws the snake using its coordinates
 
 Snake.prototype.draw = function () {
@@ -156,8 +176,8 @@ Snake.prototype.draw = function () {
   this.board.forEach(function (boardSegment) {
     ctx.fillRect(boardSegment.x, boardSegment.y, S, S);
 
-    localStorage.getItem("Speed(frame per second lower means faster)");
-    localStorage.setItem("Speed(frame per second lower means faster)", speed);
+    localStorage.getItem("Speed");
+    localStorage.setItem("Speed", speed);
 
 
     localStorage.getItem("Snakes Size");
@@ -181,13 +201,13 @@ Food.prototype.draw = function () {
 function Food() {
 
   // food cordinates are random between 0 and the games width or height minus the size of each grid block
-  this.x = getRandomGameCoordinate(width);
-  this.y = getRandomGameCoordinate(height);
+  this.x = getRandomGameCoordinate(this.Width);
+  this.y = getRandomGameCoordinate(this.Height);
   console.log("FOOD: x= " + this.x + ", y= " + this.y);
 
   // Function for generating a random whole number aligned on the game grid
   function getRandomGameCoordinate(cor) {
-    cor = Math.floor((cor - S) / S);
+    cor = Math.floor((Math.random() * S) );
     return S *Math.floor(Math.random() * (cor));
   }
 
@@ -225,6 +245,7 @@ function RunGame() {
   drawScore();
   snake.draw();
   food.draw();
+  
   return true;
 
 }
@@ -232,7 +253,7 @@ function RunGame() {
 function drawScore() {
   ctx.fillStyle = "#eb3b5a";
   ctx.font = '40px sans-serif';
-  ctx.fillText('Score: ' + score, 10, 390);
+  ctx.fillText('Score: ' + score, 10, 50);
   let highscore = localStorage.getItem("highscore");
   let high = document.getElementById("high")
   high.style = "font-size:30px"
@@ -248,16 +269,13 @@ function drawScore() {
 }
 
 // animation loop 
-function animate(currentTimestamp) {
+function animate(current) {
   // Repeat the loop without animating if it hasnt been long enough yet.
-  if (currentTimestamp < nextFrame) {
+  if (current < nextFrame) {
     requestAnimationFrame(animate);
     return; // this ends the function, preventing the code below from running when it shouldnt
   }
-
-  // if it has been long enough, update the time for the next animation frame and then animate stuff!
-  nextFrame = currentTimestamp + speed;
-
+  nextFrame = current + speed;
   // Clear the canvas between each animation frame
   ctx.clearRect(0, 0, 2000, 2000);
 
@@ -278,6 +296,7 @@ function gameOver() {
   scoreLast.appendChild(ps)
   ps.style.display = "inline-block"
   // ctx.fillText('Final Score: ' + score, 100, 200); 
-  ctx.fillText('Refresh page ', 150, 200);
+  ctx.fillText('Refresh page ', 130, 180);
+  ctx.fillText('To Start New Game ', 80, 220);
 }
 //  }
