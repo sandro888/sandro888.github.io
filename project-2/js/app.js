@@ -199,7 +199,7 @@ function Food() {
 
   // Function for generating a random whole number aligned on the game grid
   function getRandomGameCoordinate(cor) {
-    cor = Math.floor((Math.random() * S));
+    cor = Math.floor((Math.random() * S+3));
     return S * Math.floor(Math.random() * (cor));
   }
 
