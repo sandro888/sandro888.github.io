@@ -237,7 +237,6 @@ function RunGame() {
   drawScore();
   snake.drawSnake();
   food.drawFood();
-
   return true;
 
 }
@@ -269,7 +268,7 @@ function animate(current) {
   }
   nextFrame = current + speed;
   // Clear the canvas between each animation frame
-  ctx.clearRect(0, 0, 2000, 2000);
+  ctx.clearRect(0, 0, 1000, 2000);
 
   // Repeat the animation loop forever, unless RunGame returns false for end game
   if (RunGame()) {
