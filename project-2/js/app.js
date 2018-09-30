@@ -10,8 +10,8 @@ style.marginRight = "auto";
 let parentStyle = canvas.parentElement.style;
 parentStyle.textAlign = "center";
 parentStyle.width = "100%";
-let width;
-let height ;
+let width =500;
+let height =400;
 let S = 20;           // square of one grid block
 let score = 0;
 let speed = 100;                     // snake  speed frame/per/second. 
