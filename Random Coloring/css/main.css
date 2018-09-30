@@ -1,0 +1,25 @@
+#button{
+  display: block;
+  margin: 10px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.container {
+  margin-left: auto;
+  margin-right: auto;
+  display: grid;
+  grid-template-columns: repeat(10, 80px);
+  grid-auto-rows: 45px;
+  grid-gap: 6px;
+  width: 700px;
+    
+}
+.block {
+  border: 1px solid black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+  
