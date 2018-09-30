@@ -10,12 +10,12 @@ style.marginRight = "auto";
 let parentStyle = canvas.parentElement.style;
 parentStyle.textAlign = "center";
 parentStyle.width = "100%";
-let width =500;
-let height =400;
+let width = 500;
+let height = 400;
 let S = 20;           // square of one grid block
 let score = 0;
 let speed = 100;                     // snake  speed frame/per/second. 
-let nextFrame = 0;          
+let nextFrame = 0;
 let snakeSize = 1
 let numberOfFoods = 1
 
@@ -66,28 +66,28 @@ function speedPick() {
 
 }
 speedPick();
-function changeSize(){
+function changeSize() {
   var canvas = document.getElementById("snakeCanvas");
-  var line   = document.getElementById("width").value;
-  var cols   = document.getElementById("height").value;
-  window.cnv = null;  
+  var line = document.getElementById("width").value;
+  var cols = document.getElementById("height").value;
+  window.cnv = null;
   // resize the canvas
-  this.Width = canvas.width = line ; 
-  this.Height = canvas.height = cols ; 
-  canvas.style.border = " 4px solid rgb(167, 157, 157)"; 
-  if (canvas.getContext) { 
+  this.Width = canvas.width = line;
+  this.Height = canvas.height = cols;
+  canvas.style.border = " 4px solid rgb(167, 157, 157)";
+  if (canvas.getContext) {
     window.cnv = canvas.getContext("2d");
     canvas();
   }
 
 
-function canvas(){
-      cnv.strokeStyle = "olive";
-      // put the text in the canvas
-}
+  function canvas() {
+    cnv.strokeStyle = "olive";
+    // put the text in the canvas
+  }
 
-// window.onload=function(){
-//   changeSize();
+  // window.onload=function(){
+  //   changeSize();
 };
 // by arrow keys changing snkaes direction
 function keyFunction(event) {
@@ -105,13 +105,13 @@ function keyFunction(event) {
 }
 // let snake = new Snake(); // createing Snake object
 let food = new Food();    // creating food object
-class Snake{
-  constructor(){
-     // snake starts moving at cordinates (x= 100, y=0) 
-  this.board = [{ x: 100, y: 0 }];
-  // at the beggining snake moves up to down
-  this.DirectionX = 0 * S;
-  this.DirectionY = 1 * S;
+class Snake {
+  constructor() {
+    // snake starts moving at cordinates (x= 100, y=0) 
+    this.board = [{ x: 100, y: 0 }];
+    // at the beggining snake moves up to down
+    this.DirectionX = 0 * S;
+    this.DirectionY = 1 * S;
 
   }
   updateDirection(x, y) {
@@ -121,27 +121,27 @@ class Snake{
       this.DirectionY = y * S;
     }
   };
-  updateSnakePos(){
+  updateSnakePos() {
     // new cordinates equals old cordinates + current one
     let newPosX = this.board[0].x + this.DirectionX;
-  
+
     let newPosY = this.board[0].y + this.DirectionY;
-  
+
     //  if x cordintes is off from canvas it dies 
-    if(newPosX < 0) {
+    if (newPosX < 0) {
       return "die";
     }
-    else if(newPosX > width - S) {
+    else if (newPosX > width - S) {
       return "die"
     }
     // if y cordintes is off from canvas it dies
-    if(newPosY < 0) {
+    if (newPosY < 0) {
       return "die";
     }
-    else if(newPosY > height - S) {
+    else if (newPosY > height - S) {
       return "die"
     }
-  
+
     // ifsankes hits himself this means snakes new position is alrady exist end game
     // = use filter to check ifarray contains a match cordinates
     let SelfCrash = this.board.filter(function (boardSegment) {
@@ -150,20 +150,20 @@ class Snake{
     if (SelfCrash.length > 0) {
       return "die";
     }
-  
-  
-  
+
+
+
     // if snakes stays alive adding new cordinates 
     this.board.unshift({ x: newPosX, y: newPosY });
     // checking coediantes
-    if (newPosX === food.x && newPosY=== food.y) {
+    if (newPosX === food.x && newPosY === food.y) {
       return "eat";
     }
-  
+
     // If the snake didnt die or eat, it stays the same length.
     // So remove its last board segment from the array to stop drawing it we already moved it to the front with unshift()!
     this.board.pop();
-  
+
   };
 }
 // function Snake() {
@@ -250,8 +250,8 @@ Food.prototype.drawFood = function () {
 
   ctx.fillStyle = "#00a8ff";
 
-  
-  ctx.drawImage(planet,this.x, this.y, S, S);
+
+  ctx.drawImage(planet, this.x, this.y, S, S);
   localStorage.getItem("number of foods");
   localStorage.setItem("number of foods", numberOfFoods);
 
@@ -259,16 +259,15 @@ Food.prototype.drawFood = function () {
 };
 
 function Food() {
-
   // food cordinates are random between 0 and the games width or height minus the size of each grid block
   this.x = getRandomGameCoordinate(this.Width);
   this.y = getRandomGameCoordinate(this.Height);
-  console.log("FOOD: x= " + this.x + ", y= " + this.y);
+  console.log("food: x= " + this.x + ", y= " + this.y);
 
   // Function for generating a random whole number aligned on the game grid
   function getRandomGameCoordinate(cor) {
-    cor = Math.floor((Math.random() * S) );
-    return S *Math.floor(Math.random() * (cor));
+    cor = Math.floor((Math.random() * S));
+    return S * Math.floor(Math.random() * (cor));
   }
 
 }
@@ -305,7 +304,7 @@ function RunGame() {
   drawScore();
   snake.drawSnake();
   food.drawFood();
-  
+
   return true;
 
 }
@@ -345,8 +344,6 @@ function animate(current) {
     requestAnimationFrame(animate);
   }
 }
-
-
 function gameOver() {
   ctx.fillStyle = "#eb3b5a";
   ctx.font = '40px sans-serif';
