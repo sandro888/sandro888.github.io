@@ -103,72 +103,132 @@ function keyFunction(event) {
   }
 
 }
-let snake = new Snake(); // createing Snake object
+// let snake = new Snake(); // createing Snake object
 let food = new Food();    // creating food object
-
-function Snake() {
-  // snake starts moving at cordinates (x= 100, y=0) 
+class Snake{
+  constructor(board,DirectionX,DirectionY){
+     // snake starts moving at cordinates (x= 100, y=0) 
   this.board = [{ x: 100, y: 0 }];
   // at the beggining snake moves up to down
   this.DirectionX = 0 * S;
   this.DirectionY = 1 * S;
+
+  }
+  updateDirection(x, y) {
+    // this prevents user to move snake reverse direction
+    if (x + this.DirectionX != 0 && y + this.DirectionY != 0) {
+      this.DirectionX = x * S;
+      this.DirectionY = y * S;
+    }
+  };
+  updateSnakePos(){
+    // new cordinates equals old cordinates + current one
+    let newPosX = this.board[0].x + this.DirectionX;
+  
+    let newPosY = this.board[0].y + this.DirectionY;
+  
+    //  if x cordintes is off from canvas it dies 
+    if(newPosX < 0) {
+      return "die";
+    }
+    else if(newPosX > width - S) {
+      return "die"
+    }
+    // if y cordintes is off from canvas it dies
+    if(newPosY < 0) {
+      return "die";
+    }
+    else if(newPosY > height - S) {
+      return "die"
+    }
+  
+    // ifsankes hits himself this means snakes new position is alrady exist end game
+    // = use filter to check ifarray contains a match cordinates
+    let SelfCrash = this.board.filter(function (boardSegment) {
+      return boardSegment.x === newPosX && boardSegment.y === newPosY;
+    });
+    if (SelfCrash.length > 0) {
+      return "die";
+    }
+  
+  
+  
+    // if snakes stays alive adding new cordinates 
+    this.board.unshift({ x: newPosX, y: newPosY });
+    // checking coediantes
+    if (newPosX === food.x && newPosY=== food.y) {
+      return "eat";
+    }
+  
+    // If the snake didnt die or eat, it stays the same length.
+    // So remove its last board segment from the array to stop drawing it we already moved it to the front with unshift()!
+    this.board.pop();
+  
+  };
 }
+// function Snake() {
+//   // snake starts moving at cordinates (x= 100, y=0) 
+//   this.board = [{ x: 100, y: 0 }];
+//   // at the beggining snake moves up to down
+//   this.DirectionX = 0 * S;
+//   this.DirectionY = 1 * S;
+// }
 
 // This method updates the snakes direction alos used in Keyfunc function
 // controling snakes direction
-Snake.prototype.updateDirection = function (x, y) {
-  // this prevents user to move snake reverse direction
-  if (x + this.DirectionX != 0 && y + this.DirectionY != 0) {
-    this.DirectionX = x * S;
-    this.DirectionY = y * S;
-  }
-};
-
+// Snake.prototype.updateDirection = function (x, y) {
+//   // this prevents user to move snake reverse direction
+//   if (x + this.DirectionX != 0 && y + this.DirectionY != 0) {
+//     this.DirectionX = x * S;
+//     this.DirectionY = y * S;
+//   }
+// };
+let snake = new Snake()
 // this method update snake cordinates
-Snake.prototype.updateSnakePos = function () {
-  // new cordinates equals old cordinates + current one
-  let newPosX = this.board[0].x + this.DirectionX;
+// Snake.prototype.updateSnakePos = function () {
+//   // new cordinates equals old cordinates + current one
+//   let newPosX = this.board[0].x + this.DirectionX;
 
-  let newPosY = this.board[0].y + this.DirectionY;
+//   let newPosY = this.board[0].y + this.DirectionY;
 
-  //  if x cordintes is off from canvas it dies 
-  if(newPosX < 0) {
-    return "die";
-  }
-  else if(newPosX > width - S) {
-    return "die"
-  }
-  // if y cordintes is off from canvas it dies
-  if(newPosY < 0) {
-    return "die";
-  }
-  else if(newPosY > height - S) {
-    return "die"
-  }
+//   //  if x cordintes is off from canvas it dies 
+//   if(newPosX < 0) {
+//     return "die";
+//   }
+//   else if(newPosX > width - S) {
+//     return "die"
+//   }
+//   // if y cordintes is off from canvas it dies
+//   if(newPosY < 0) {
+//     return "die";
+//   }
+//   else if(newPosY > height - S) {
+//     return "die"
+//   }
 
-  // ifsankes hits himself this means snakes new position is alrady exist end game
-  // = use filter to check ifarray contains a match cordinates
-  let SelfCrash = this.board.filter(function (boardSegment) {
-    return boardSegment.x === newPosX && boardSegment.y === newPosY;
-  });
-  if (SelfCrash.length > 0) {
-    return "die";
-  }
+//   // ifsankes hits himself this means snakes new position is alrady exist end game
+//   // = use filter to check ifarray contains a match cordinates
+//   let SelfCrash = this.board.filter(function (boardSegment) {
+//     return boardSegment.x === newPosX && boardSegment.y === newPosY;
+//   });
+//   if (SelfCrash.length > 0) {
+//     return "die";
+//   }
 
 
 
-  // if snakes stays alive adding new cordinates 
-  this.board.unshift({ x: newPosX, y: newPosY });
-  // checking coediantes
-  if (newPosX === food.x && newPosY=== food.y) {
-    return "eat";
-  }
+//   // if snakes stays alive adding new cordinates 
+//   this.board.unshift({ x: newPosX, y: newPosY });
+//   // checking coediantes
+//   if (newPosX === food.x && newPosY=== food.y) {
+//     return "eat";
+//   }
 
-  // If the snake didnt die or eat, it stays the same length.
-  // So remove its last board segment from the array to stop drawing it we already moved it to the front with unshift()!
-  this.board.pop();
+//   // If the snake didnt die or eat, it stays the same length.
+//   // So remove its last board segment from the array to stop drawing it we already moved it to the front with unshift()!
+//   this.board.pop();
 
-};
+// };
 // This method draws the snake using its coordinates
 
 Snake.prototype.draw = function () {
