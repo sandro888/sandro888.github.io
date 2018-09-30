@@ -231,7 +231,7 @@ let snake = new Snake()
 // };
 // This method draws the snake using its coordinates
 
-Snake.prototype.draw = function () {
+Snake.prototype.drawSnake = function () {
   ctx.fillStyle = "#6c5ce7";
   this.board.forEach(function (boardSegment) {
     ctx.fillRect(boardSegment.x, boardSegment.y, S, S);
@@ -246,7 +246,7 @@ Snake.prototype.draw = function () {
   });
 };
 // drawing food
-Food.prototype.draw = function () {
+Food.prototype.drawFood = function () {
 
   ctx.fillStyle = "#00a8ff";
 
@@ -303,8 +303,8 @@ function RunGame() {
 
   // Draw the snak teh score and the food for each animationframe (again, only ifthe snake isnt dead)
   drawScore();
-  snake.draw();
-  food.draw();
+  snake.drawSnake();
+  food.drawFood();
   
   return true;
 
