@@ -4,7 +4,9 @@ let canvas = document.getElementById('snakeCanvas');
 let ctx = canvas.getContext('2d');
 let style = canvas.style;
 const planet = new Image();
+const rocket = new Image();
 planet.src = 'css/anon.png';
+rocket.src = 'css/ro.png'
 style.marginLeft = "auto";
 style.marginRight = "auto";
 let parentStyle = canvas.parentElement.style;
@@ -178,8 +180,8 @@ class Snake {
   drawSnake() {
     ctx.fillStyle = "#6c5ce7";
     this.board.forEach(function (boardSegment) {
-      ctx.fillRect(boardSegment.x, boardSegment.y, S, S);
-  
+      // ctx.fillRect(boardSegment.x, boardSegment.y, S, S);
+      ctx.drawImage(rocket,boardSegment.x, boardSegment.y, S, S)
       localStorage.getItem("Speed");
       localStorage.setItem("Speed", speed);
   
