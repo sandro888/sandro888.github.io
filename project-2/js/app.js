@@ -25,7 +25,11 @@ function changeFoodAmount()
 {
   numberOfFoods = document.getElementById('food').value;
   
+  console.log(numberOfFoods);
 }
+
+
+
 localStorage.getItem("boards width", "board height");
 localStorage.setItem("boards widht", width);
 localStorage.setItem("boards height", height);
@@ -73,29 +77,29 @@ function speedPick() {
 
 }
 speedPick();
-class changeSize {
-  constructor() {
-    canvas = document.getElementById("snakeCanvas");
-    this.line = document.getElementById("width").value;
-    this.cols = document.getElementById("height").value;
-    window.cnv = null;
-    // resize the canvas
-    canvas.width = line;
-    canvas.height = cols;
-    canvas.style.border = " 4px solid rgb(167, 157, 157)";
-    width = canvas.width;
-    height = canvas.height;
-    if (canvas.getContext) {
-      window.cnv = canvas.getContext("2d");
-      dcanvas();
-    }
-    function dcanvas() {
-      cnv.strokeStyle = "olive";
-      // put the text in the canvas
-    }
+function changeSize() {
+  canvas = document.getElementById("snakeCanvas");
+  this.line = document.getElementById("width").value;
+  this.cols = document.getElementById("height").value;
+  window.cnv = null;
+  // resize the canvas
+  canvas.width = line;
+  canvas.height = cols;
+  canvas.style.border = " 4px solid rgb(167, 157, 157)";
+  width = canvas.width;
+  height = canvas.height;
+
+  if (canvas.getContext) {
+    window.cnv = canvas.getContext("2d");
+    dcanvas();
   }
-}
-;
+  function dcanvas() {
+    cnv.strokeStyle = "olive";
+    // put the text in the canvas
+  }
+
+
+};
 // by arrow keys changing snkaes direction
 function keyFunction(event) {
   console.log("snake x: " + snake.board[0].x + ", y: " + snake.board[0].y);
@@ -323,5 +327,4 @@ function gameOver() {
   // ctx.fillText('To Start New Game ', 80, 220);
   alert("Refresh page to start new game")
 }
-
 //  }
