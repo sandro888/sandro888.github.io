@@ -1,5 +1,3 @@
-// window.onload = () =>{
-
 let canvas = document.getElementById('snakeCanvas');
 let ctx = canvas.getContext('2d');
 let style = canvas.style;
@@ -137,20 +135,6 @@ class Snake {
 
     let newPosY = this.board[0].y + this.DirectionY;
 
-    //  if x cordintes is off from canvas it dies 
-    // if (newPosX < 0) {
-    //   return "die";
-    // }
-    // else if (newPosX > line.value - S) {
-    //   return "die"
-    // }
-    // // if y cordintes is off from canvas it dies
-    // if (newPosY < 0) {
-    //   return "die";
-    // }
-    // else if (newPosY >cols.value- S) {
-    //   return "die"
-    // }
     if (newPosX < 0) {
       return "die";
     }
@@ -327,4 +311,4 @@ function gameOver() {
   // ctx.fillText('To Start New Game ', 80, 220);
   alert("Refresh page to start new game")
 }
-//  }
+
