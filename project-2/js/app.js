@@ -189,8 +189,8 @@ class Snake {
   drawSnake() {
     ctx.fillStyle = "#6c5ce7";
     this.board.forEach(function (boardSegment) {
-      // ctx.fillRect(boardSegment.x, boardSegment.y, S, S);
-      ctx.drawImage(rocket,boardSegment.x, boardSegment.y, S, S)
+      ctx.fillRect(boardSegment.x, boardSegment.y, S, S);
+      // ctx.drawImage(rocket,boardSegment.x, boardSegment.y, S, S)
       localStorage.getItem("Speed");
       localStorage.setItem("Speed", 360/speed + 100);
   
