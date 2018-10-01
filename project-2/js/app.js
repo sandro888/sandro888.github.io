@@ -30,9 +30,7 @@ function changeFoodAmount()
 
 
 
-localStorage.getItem("boards width", "board height");
-localStorage.setItem("boards widht", width);
-localStorage.setItem("boards height", height);
+
 
 // by this fucntion player can determine speed/LVL of snake
 function speedPick() {
@@ -88,7 +86,9 @@ function changeSize() {
   canvas.style.border = " 4px solid rgb(167, 157, 157)";
   width = canvas.width;
   height = canvas.height;
-
+  localStorage.getItem("boards width", "board height");
+  localStorage.setItem("boards widht", width);
+  localStorage.setItem("boards height", height);
   if (canvas.getContext) {
     window.cnv = canvas.getContext("2d");
     dcanvas();
