@@ -12,8 +12,8 @@ style.marginRight = "auto";
 let parentStyle = canvas.parentElement.style;
 parentStyle.textAlign = "center";
 parentStyle.width = "100%";
-let width = 500;
-let height = 400;
+let width = canvas.width;
+let height = canvas.height;
 let S = 20;           // square of one grid block
 let score = 0;
 let speed = 100;                     // snake  speed frame/per/second. 
@@ -35,7 +35,7 @@ function speedPick() {
   novice.addEventListener("click", Novice)
   function Novice() {
     if (novice) {
-      speed = speed + 100;
+      speed = speed + 80;
 
     }
     novice.removeEventListener("click", Novice)
@@ -48,7 +48,7 @@ function speedPick() {
   inter.addEventListener("click", Inter)
   function Inter() {
     if (inter) {
-      speed = speed - 5;
+      speed = speed - 10;
     }
     novice.removeEventListener("click", Novice)
     inter.removeEventListener("click", Inter)
@@ -74,9 +74,12 @@ function changeSize() {
   this.cols = document.getElementById("height").value;
   window.cnv = null;
   // resize the canvas
-  this.Width = canvas.width = line;
-  this.Height = canvas.height = cols;
+  canvas.width = line;
+  canvas.height = cols;
   canvas.style.border = " 4px solid rgb(167, 157, 157)";
+  width = canvas.width;
+  height = canvas.height;
+
   if (canvas.getContext) {
     window.cnv = canvas.getContext("2d");
     dcanvas();
@@ -143,14 +146,14 @@ class Snake {
     if (newPosX < 0) {
       return "die";
     }
-    else if (newPosX > width - S) {
+    if (newPosX > width - S) {
       return "die"
     }
     // if y cordintes is off from canvas it dies
     if (newPosY < 0) {
       return "die";
     }
-    else if (newPosY >height- S) {
+    if (newPosY >height- S) {
       return "die"
     }
 
@@ -183,7 +186,7 @@ class Snake {
       // ctx.fillRect(boardSegment.x, boardSegment.y, S, S);
       ctx.drawImage(rocket,boardSegment.x, boardSegment.y, S, S)
       localStorage.getItem("Speed");
-      localStorage.setItem("Speed", speed);
+      localStorage.setItem("Speed", 360/speed + 100);
   
   
       localStorage.getItem("Snakes Size");
@@ -208,8 +211,8 @@ Food.prototype.drawFood = function () {
 
 function Food() {
   // food cordinates are random between 0 and the games width or height minus the size of each grid block
-  this.x = getRandomGameCoordinate(this.Width);
-  this.y = getRandomGameCoordinate(this.Height);
+  this.x = getRandomGameCoordinate(width);
+  this.y = getRandomGameCoordinate(height);
   console.log("food: x= " + this.x + ", y= " + this.y);
 
   // Function for generating a random whole number aligned on the game grid
@@ -300,7 +303,8 @@ function gameOver() {
   scoreLast.appendChild(ps)
   ps.style.display = "inline-block"
   // ctx.fillText('Final Score: ' + score, 100, 200); 
-  ctx.fillText('Refresh page ', 130, 180);
-  ctx.fillText('To Start New Game ', 80, 220);
+  // ctx.fillText('Refresh page ', 130, 180);
+  // ctx.fillText('To Start New Game ', 80, 220);
+  alert("Refresh page to start new game")
 }
 //  }
