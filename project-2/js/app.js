@@ -25,9 +25,7 @@ function changeFoodAmount()
 {
   numberOfFoods = document.getElementById('food').value;
   
-  console.log(numberOfFoods);
 }
-
 localStorage.getItem("boards width", "board height");
 localStorage.setItem("boards widht", width);
 localStorage.setItem("boards height", height);
@@ -75,29 +73,29 @@ function speedPick() {
 
 }
 speedPick();
-function changeSize() {
-  canvas = document.getElementById("snakeCanvas");
-  this.line = document.getElementById("width").value;
-  this.cols = document.getElementById("height").value;
-  window.cnv = null;
-  // resize the canvas
-  canvas.width = line;
-  canvas.height = cols;
-  canvas.style.border = " 4px solid rgb(167, 157, 157)";
-  width = canvas.width;
-  height = canvas.height;
-
-  if (canvas.getContext) {
-    window.cnv = canvas.getContext("2d");
-    dcanvas();
+class changeSize {
+  constructor() {
+    canvas = document.getElementById("snakeCanvas");
+    this.line = document.getElementById("width").value;
+    this.cols = document.getElementById("height").value;
+    window.cnv = null;
+    // resize the canvas
+    canvas.width = line;
+    canvas.height = cols;
+    canvas.style.border = " 4px solid rgb(167, 157, 157)";
+    width = canvas.width;
+    height = canvas.height;
+    if (canvas.getContext) {
+      window.cnv = canvas.getContext("2d");
+      dcanvas();
+    }
+    function dcanvas() {
+      cnv.strokeStyle = "olive";
+      // put the text in the canvas
+    }
   }
-  function dcanvas() {
-    cnv.strokeStyle = "olive";
-    // put the text in the canvas
-  }
-
-
-};
+}
+;
 // by arrow keys changing snkaes direction
 function keyFunction(event) {
   console.log("snake x: " + snake.board[0].x + ", y: " + snake.board[0].y);
@@ -205,45 +203,38 @@ class Snake {
 }
 
 let snake = new Snake()
-Food.prototype.drawFood = function () {
 
-  ctx.fillStyle = "#00a8ff";
-
-  for(let i=0; i<numberOfFoods; i++)
-  {
-    //drawing all foods
-    ctx.drawImage(planet, this.coordinates_x[i], this.coordinates_y[i], S, S);
-    localStorage.getItem("number of foods");
-    localStorage.setItem("number of foods", numberOfFoods);
-  }
-
- 
-};
-
-function Food() {
-  // food cordinates are random between 0 and the games width or height minus the size of each grid block
-  this.coordinates_x = [];
-  this.coordinates_y = [];
-  this.coordinatesArray = [];
-  for(let i=0; i<numberOfFoods; i++)
-  {
-    console.log(numberOfFoods);
-    //generating food coordinates
-    this.coordinates_x[i] = getRandomGameCoordinate(width);
-    this.coordinates_y[i] = getRandomGameCoordinate(height);
-    //saving food coordinates array
-    this.coordinatesArray[i] = [this.coordinates_x[i],this.coordinates_y[i]].toString();
-    console.log("food: x= " + this.coordinates_x[i] + ", y= " + this.coordinates_y[i]);
-  }
-
-  console.log(this.coordinatesArray);
-
+class Food {
+  constructor() {
+    // food cordinates are random between 0 and the games width or height minus the size of each grid block
+    this.coordinates_x = [];
+    this.coordinates_y = [];
+    this.coordinatesArray = [];
+    for (let i = 0; i < numberOfFoods; i++) {
+      console.log(numberOfFoods);
+      //generating food coordinates
+      this.coordinates_x[i] = getRandomGameCoordinate(width);
+      this.coordinates_y[i] = getRandomGameCoordinate(height);
+      //saving food coordinates array
+      this.coordinatesArray[i] = [this.coordinates_x[i], this.coordinates_y[i]].toString();
+      console.log("food: x= " + this.coordinates_x[i] + ", y= " + this.coordinates_y[i]);
+    }
+    console.log(this.coordinatesArray);
     // Function for generating a random whole number aligned on the game grid
     function getRandomGameCoordinate(cor) {
-      cor = Math.floor((Math.random() * S+3));
+      cor = Math.floor((Math.random() * S + 3));
       return S * Math.floor(Math.random() * (cor));
+    }
   }
-
+  drawFood() {
+    ctx.fillStyle = "#00a8ff";
+    for (let i = 0; i < numberOfFoods; i++) {
+      //drawing all foods
+      ctx.drawImage(planet, this.coordinates_x[i], this.coordinates_y[i], S, S);
+      localStorage.getItem("number of foods");
+      localStorage.setItem("number of foods", numberOfFoods);
+    }
+  }
 }
 
 let food
@@ -332,4 +323,5 @@ function gameOver() {
   // ctx.fillText('To Start New Game ', 80, 220);
   alert("Refresh page to start new game")
 }
+
 //  }
