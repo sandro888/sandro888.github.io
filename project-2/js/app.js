@@ -18,8 +18,15 @@ let S = 20;           // square of one grid block
 let score = 0;
 let speed = 100;                     // snake  speed frame/per/second. 
 let nextFrame = 0;
-let snakeSize = 1
-let numberOfFoods = 1
+let snakeSize = 1;
+let numberOfFoods = 1;
+
+function changeFoodAmount()
+{
+  numberOfFoods = document.getElementById('food').value;
+  
+  console.log(numberOfFoods);
+}
 
 localStorage.getItem("boards width", "board height");
 localStorage.setItem("boards widht", width);
@@ -106,7 +113,6 @@ function keyFunction(event) {
 
 }
 // let snake = new Snake(); // createing Snake object
-let food = new Food();    // creating food object
 class Snake {
   constructor() {
     // snake starts moving at cordinates (x= 100, y=0) 
@@ -171,7 +177,9 @@ class Snake {
     // if snakes stays alive adding new cordinates 
     this.board.unshift({ x: newPosX, y: newPosY });
     // checking coediantes
-    if (newPosX === food.x && newPosY === food.y) {
+    let snakePos = [newPosX, newPosY].toString();
+    //comparing food coordinates to snake coordinates
+    if (food.coordinatesArray.includes(snakePos)) {
       return "eat";
     }
 
@@ -201,31 +209,48 @@ Food.prototype.drawFood = function () {
 
   ctx.fillStyle = "#00a8ff";
 
+  for(let i=0; i<numberOfFoods; i++)
+  {
+    //drawing all foods
+    ctx.drawImage(planet, this.coordinates_x[i], this.coordinates_y[i], S, S);
+    localStorage.getItem("number of foods");
+    localStorage.setItem("number of foods", numberOfFoods);
+  }
 
-  ctx.drawImage(planet, this.x, this.y, S, S);
-  localStorage.getItem("number of foods");
-  localStorage.setItem("number of foods", numberOfFoods);
-
-
+ 
 };
 
 function Food() {
   // food cordinates are random between 0 and the games width or height minus the size of each grid block
-  this.x = getRandomGameCoordinate(width);
-  this.y = getRandomGameCoordinate(height);
-  console.log("food: x= " + this.x + ", y= " + this.y);
+  this.coordinates_x = [];
+  this.coordinates_y = [];
+  this.coordinatesArray = [];
+  for(let i=0; i<numberOfFoods; i++)
+  {
+    console.log(numberOfFoods);
+    //generating food coordinates
+    this.coordinates_x[i] = getRandomGameCoordinate(width);
+    this.coordinates_y[i] = getRandomGameCoordinate(height);
+    //saving food coordinates array
+    this.coordinatesArray[i] = [this.coordinates_x[i],this.coordinates_y[i]].toString();
+    console.log("food: x= " + this.coordinates_x[i] + ", y= " + this.coordinates_y[i]);
+  }
 
-  // Function for generating a random whole number aligned on the game grid
-  function getRandomGameCoordinate(cor) {
-    cor = Math.floor((Math.random() * S+3));
-    return S * Math.floor(Math.random() * (cor));
+  console.log(this.coordinatesArray);
+
+    // Function for generating a random whole number aligned on the game grid
+    function getRandomGameCoordinate(cor) {
+      cor = Math.floor((Math.random() * S+3));
+      return S * Math.floor(Math.random() * (cor));
   }
 
 }
 
-
+let food
 
 let start = document.getElementById("start").addEventListener("click", () => {
+  //creating food object
+  food = new Food();
   Animation = requestAnimationFrame(animate);
 
 })
