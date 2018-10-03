@@ -320,5 +320,7 @@ function gameOver() {
   // ctx.fillText('Refresh page ', 130, 180);
   // ctx.fillText('To Start New Game ', 80, 220);
   alert("Refresh page to start new game")
+  // setTimeout(function () {location.reload()}, 3000)
+  
 }
 
