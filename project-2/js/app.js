@@ -218,9 +218,10 @@ class Food {
     }
     console.log(this.coordinatesArray);
     // Function for generating a random whole number aligned on the game grid
-    function getRandomGameCoordinate(cor) {
-      cor = Math.floor((Math.random() * S + 1));
-      return S * Math.floor(Math.random() * (cor));
+    function getRandomGameCoordinate(range) {
+      let squaresInRange = Math.floor(range/S);
+      let randomCoor = Math.floor(Math.random()*squaresInRange)*S;
+      return randomCoor;
     }
   }
   drawFood() {
