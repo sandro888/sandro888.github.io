@@ -47,10 +47,16 @@ input:focus{
   /* border: 2px solid #777777; */
   border-radius: 8px;
   padding: 17px;
-  margin-left: 60px;
+}
+img{
+  height: 300px;
+  margin-top:140px;
+  margin-left: 10px;
+  
+
 }
 .main{
-  margin-left: 340px;
+  margin-right: 20PX;
 }
 ::placeholder{
   color: #fff;
@@ -71,9 +77,8 @@ canvas {
   background-size: cover; */
 }
 #score{
-  font-family: Arial, Helvetica, sans-serif;
   color: #eb3b5a;
-  font-size: 23px;
+  font-size: 27px;
       
 }
 #start{

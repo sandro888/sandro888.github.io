@@ -84,6 +84,23 @@ function changeSize() {
   canvas.style.border = " 4px solid rgb(167, 157, 157)";
   width = canvas.width;
   height = canvas.height;
+  if(height >400){
+   canvas.height = 400
+  }
+  if(height <200){
+   canvas.height = 200
+  }
+  if(width >600 ){
+   canvas.width = 600
+  }
+  if(width <200 ){
+   canvas.width = 200
+
+  }
+  width = canvas.width;
+  height = canvas.height;
+  
+
   localStorage.getItem("boards width", "board height");
   localStorage.setItem("boards widht", width);
   localStorage.setItem("boards height", height);

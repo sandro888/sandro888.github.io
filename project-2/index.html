@@ -9,37 +9,34 @@
   <title>Snake in space</title>
 </head>
 <body>
-
+  
   <div class="Container part">
+    <div class="col main">
+        <img  class="col menu" src="css/snake.png" alt="">
+
+    </div>
    <div class="col main">
       <div>
+        
         <h2>Choose Your LVL</h2>
         <button class="button" id="novice">Novice</button>
         <button class="button" id="inter">Intermediate</button>
         <button class="button" id="ex">Expert</button>
       </div>
+      
       <canvas id="snakeCanvas" width="500" height="400">
+        
       </canvas>
       <div id="score">Final Score:</div>
     </div> 
     <div class="col menu">
       <h1>Menu</h1><hr> 
       
-      <h4>Width</h4><input id="width"  type="text" placeholder="Pick board width " onchange="changeSize()">
+      <h4>Width</h4><input id="width"  type="text" placeholder="Pick board width (200 - 600) " onchange="changeSize()">
       
-      <h4>Height</h4><input id="height" type="text"  placeholder="Pick board height" onchange="changeSize()">
+      <h4>Height</h4><input id="height" type="text"  placeholder="Pick board height (200 - 400)" onchange="changeSize()">
       <!-- <h4>Snake length</h4><input id="size" type="text" placeholder="Pick Snake Size" onchange="changeSnakeSize()"> -->
       <h4>Food amount</h4><input id="food" type="text" placeholder="Pick Number of Foods" onchange="changeFoodAmount()">
-      
-     
-
-
-      <!-- <h2>Pick board Size</h2>
-         <select id="boardSize">
-           <option value="3000">Small</option>
-           <option value="5000">Average</option>
-           <option value="7000">Huge</option>
-         </select> -->
       <hr>
       <div class="highs">
         <div style="font-size:30px">Highscore :</div>
