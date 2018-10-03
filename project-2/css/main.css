@@ -74,25 +74,33 @@ canvas {
   margin-top: 8px;
   color: white;
 }
+
 .button {
-  display: inline-block;
-  padding: 8px 28px;
-  font-size: 19px;
-  cursor: pointer;
-  text-align: center;
-  text-decoration: none;
-  outline: none;
-  color: #fff;
-  background-color: #127ac9;
-  border: none;
-  border-radius: 15px;
-  box-shadow: 0 7px #999;
-  }
-  
-.button:hover {background-color: #56bcdb}
-.button:active {
-  background-color: #3e758e;
-  box-shadow: 0 5px rgb(134, 131, 131);
-  transform: translateY(4px);
+	border: 2px solid #2e2e2e;
+	cursor: pointer;
+	letter-spacing: 0.2125rem;
+	overflow: hidden;
+	padding: 10px 30px;
+	position: relative;
+	text-align: center;
+	text-transform: uppercase;
+	transition: 
+		background 5s cubic-bezier(0.19, 1, 0.22, 1),
+		border 1s cubic-bezier(0.19, 1, 0.22, 1),
+		color 0.6s cubic-bezier(0.19, 1, 0.22, 1);
+	user-select: none;
 }
+.button:hover {
+	background-color: rgba(255, 255, 255, 0.05);
+	border-color: #fff;
+	box-shadow: 0 0 5px rgba(255, 245, 245, 0.8);
+	transition: background 0s;
+}
+.button:active {
+	background-color: #fff;
+}
+
+
+
+
 
