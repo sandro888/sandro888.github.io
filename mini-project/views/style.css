@@ -1,0 +1,92 @@
+label{
+    display:block;
+    margin:10px;
+}
+button{
+    margin:10px;
+
+}
+table, td, th {    
+    border: 1px solid #ddd;
+    text-align: left;
+}
+#cars,#people{
+    border: 1px solid black;
+    
+}
+h2{
+    text-align:center;
+}
+table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+th, td {
+    padding: 15px;
+    text-align: center;
+}
+input[type=text],input[type=date] {
+    
+  width:20% ;
+  padding: 8px 10px;
+  box-sizing: border-box;
+  border: none;
+  background-color: rgb(94, 216, 171);
+  color: rgb(255, 255, 255);
+  border-radius: 3px;
+  border: 1px solid white;
+}
+
+input:focus{
+  border-color: #eb3b5a;
+  outline: none;
+}
+body{
+   background-size: cover;
+    background-repeat: no-repeat;
+    background-color: #0984e3;
+    font-family: 'Teko', sans-serif;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    /* overflow: hidden;   */
+}
+.button {
+	border: 2px solid #2e2e2e;
+	cursor: pointer;
+	letter-spacing: 0.2rem;
+	overflow: hidden;
+	padding: 5px 20px;
+	position: relative;
+	text-align: center;
+	text-transform: uppercase;
+	transition: 
+		background 5s cubic-bezier(0.19, 1, 0.22, 1),
+		border 1s cubic-bezier(0.19, 1, 0.22, 1),
+		color 0.6s cubic-bezier(0.20, 1, 0.22, 1);
+	user-select: none;
+}
+.button:hover {
+	background-color: rgba(255, 255, 255, 0.05);
+	border-color: #fff;
+	box-shadow: 0 0 5px rgb(255, 255, 255);
+  transition: background 0s;
+  color: rgb(255, 255, 255);
+}
+.button:active {
+	background-color: #fff;
+}
+a{
+    text-transform: uppercase;
+
+    border: 1px solid #c4c4c4;
+	cursor: pointer;
+	letter-spacing: 0.19rem;
+	overflow: hidden;
+	padding: 4px 20px;
+    position: relative;
+    color: rgb(10, 10, 10);
+	text-align: center;
+}
+/* $ pug -w ./views/ -o ./public/ -P */

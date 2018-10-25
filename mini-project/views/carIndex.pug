@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+html(lang="en")
+    head
+        meta(charset="UTF-8")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        meta(http-equiv="X-UA-Compatible", content="ie=edge")
+        title carIndex
+        style
+            include style.css
+    body
+        form(action="http://localhost:3000/carIndex" method="post")
+            label(for="carFirm") 
+                input#carFirm(type="text" name="firm"  placeholder="firm")
+            label(for="carModels") 
+                input#carModels(type="text" name="Model"  placeholder="Model")
+            label(for="carVIN") 
+                input#carVIN(type="text" name="VIN"  placeholder="VIN")
+            label(for="carGNumber") 
+                input#carGNumber(type="text" name="Number"  placeholder="Number")
+            label(for="carColor") 
+                input#carColor(type="text" name="color"  placeholder="color")
+            label(for="carOwner") 
+                input#carOwner(type="text" name="owner"  placeholder="owner")
+            button(type="submit" class="button") Add Car
+
+            a(href="http://localhost:3000/cars/") show Car List
+
+  
+        

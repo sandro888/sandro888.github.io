@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+html(lang="en")
+    head
+        title cars List
+        style
+            include style.css
+      
+
+    body
+        table
+            tr
+                th VIN
+                th Model
+                th firm
+                th Number
+                th color
+                th owner
+            
+            
+            for mono in carStuff
+                tr
+                    td
+                        a(href=`http://localhost:3000/cars/${mono.VIN}`)= mono.VIN
+                    td= mono.Model
+                    td= mono.firm
+                    td= mono.Number
+                    td= mono.color
+                    td= mono.owner
+                    td
+                    
+                        button(type="submit" class="button" id="disable") disable            
