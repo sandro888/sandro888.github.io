@@ -26,10 +26,6 @@ function changeFoodAmount()
   console.log(numberOfFoods);
 }
 
-
-
-
-
 // by this fucntion player can determine speed/LVL of snake
 function speedPick() {
   document.addEventListener("keyup", keyFunction);
@@ -104,6 +100,7 @@ function changeSize() {
   localStorage.getItem("boards width", "board height");
   localStorage.setItem("boards widht", width);
   localStorage.setItem("boards height", height);
+  
   if (canvas.getContext) {
     window.cnv = canvas.getContext("2d");
     dcanvas();
@@ -198,8 +195,6 @@ class Snake {
       // ctx.drawImage(rocket,boardSegment.x, boardSegment.y, S, S)
       localStorage.getItem("Speed");
       localStorage.setItem("Speed", 360/speed + 100);
-  
-  
       localStorage.getItem("Snakes Size");
       localStorage.setItem("Snake Size", snakeSize);
   
@@ -246,12 +241,25 @@ class Food {
     for (let i = 0; i < numberOfFoods; i++) {
       //drawing all foods
       ctx.drawImage(planet, this.coordinates_x[i], this.coordinates_y[i], S, S);
-      localStorage.getItem("number of foods");
+     
       localStorage.setItem("number of foods", numberOfFoods);
+      if(localStorage.getItem("numberOfFoods") !=null){
+        numberOfFoods = window.localStorage.getItem("numberOfFoods")
+        document.getElementById('food').innerHTML = numberOfFoods
+        console.log(numberOfFoods)
+      }
+     
+
+      // let settings = document.getElementById("getSettings")
+      // settings.addEventListener("click",save)
+      // function save(){
+        
+
+      // }
+
     }
   }
 }
-
 let food
 
 let start = document.getElementById("start").addEventListener("click", () => {
@@ -289,6 +297,19 @@ function RunGame() {
   return true;
 
 }
+
+// let settings = document.getElementById("getSettings")
+// settings.addEventListener("click",save)
+// function save(){
+
+// }
+// function save(){
+//   let se = JSON.parse(window.localStorage.getItem('width'));
+//   document.getElementById("width").innerHTML = se
+
+
+// }
+// save()
 
 function drawScore() {
   ctx.fillStyle = "#eb3b5a";
