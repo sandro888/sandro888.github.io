@@ -1,27 +1,40 @@
 const express = require('express');
-const bodyParser = require('body-parser');
+// const bodyParser = require('body-parser');
 const app = express();
 const path = require('path')
-
-
 const Port = 3000;
 
 //                              PEOPLE
 
 
+
+class Person {
+    constructor(name, surname, id, date) {
+        this.name = name;
+        this.surname = surname;
+        this.id = id;
+        this.date = date;
+    }
+    infoEdit(name, surname, id, date) {
+        this.name = name;
+        this.surname = surname;
+        this.id = id;
+        this.date = date;
+    }
+}
 let people = [
-    { id: '0101705158' , name: 'sandro', surname: 'akhvlediani',date:'1999-10-02' },
-    
+    new Person('sandro', 'akhvlediani', 5678, '02-10-1999'),
+    new Person('aldo', 'polis', 3456, '01-14-1994')
 ];
 
 
 app.set('views', './views');
 app.set('view engine', 'pug');
 // app.use(bodyParser.urlencoded())
-app.use(bodyParser.json())
+// app.use(bodyParser.json())
 
-app.use(express.static(path.join(__dirname,'public')))
-app.use(express.urlencoded({extended:true}))
+app.use(express.static(path.join(__dirname, 'public')))
+app.use(express.urlencoded({ extended: true }))
 
 app.get('/', (req, res) => {
     res.render('index', {})
@@ -29,38 +42,58 @@ app.get('/', (req, res) => {
 
 
 app.post('/', (req, res) => {
-    console.log(req.body);
-    const obj = {
-        id: req.body.id,
-        name: req.body.name,
-        surname: req.body.surname,
-        date: req.body.date
+
+    const name = req.body.name;
+    const surname = req.body.surname;
+    const id = parseInt(req.body.id);
+    const date = req.body.date;
+    for (let person of people) {
+        if (person.id === id) {
+            return res.send('person with this id already exists')
+        }
+
+
     }
-
-
-    people.push(obj);
-    
-
+    const person = new Person(name, surname, id, date);
+    people.push(person);
     res.render('index', {})
 
 })
 app.get('/person', (req, res) => {
     res.render('person', { people })
 })
-app.get('/persons', (req, res) => {
-    res.render('persons', { people })
-})
 app.post('/person', (req, res) => {
-    const obj = {
-        id: req.body.id,
-        name: req.body.name,
-        surname: req.body.surname,
-        date: req.body.date
-    }
+
+    const name = req.body.name;
+    const surname = req.body.surname;
+    const id = req.body.id;
+    const date = req.body.date;
+    console.log(name, surname, id, date);
+    const per = people.find(person => person.id == id);
+    per.infoEdit(name, surname, id, date);
+
+    // const person = new Person(name, surname, id, date);
+    // people.push(per);
+    res.render('person', { people })
+})
+app.get('/search', (req, res) => {
+
+    res.render('search', {})
+})
+app.post('/search', (req, res) => {
+  
+    // if(req.query.search){
+    //     const personId = req.query.search;
+    //     const pers = people.find(prod => prod.personId == personId);
+        
+    // }
+
+    res.render('search', {})
+    console.log(personId);
 
 
-    people.push(obj);
-    res.render('person', {people})
+
+    // res.render('search',{})
 })
 
 
@@ -69,6 +102,11 @@ app.get('/person/:id', (req, res) => {
     const your = people.find(your => your.id == id);
     res.render('persons', { your })
 })
+app.get('/persons', (req, res) => {
+
+    res.render('persons', { people })
+})
+
 
 
 
@@ -76,62 +114,65 @@ app.get('/person/:id', (req, res) => {
 //                      CARS
 
 
-
-let carStuff = [
-    { VIN:'1457834', Model:'Q8',firm:'Audi', Number:'UO-898-OU',color:'blue' ,owner:"sandro"}
+class car {
+    constructor(VIN, Model, firm,number,color,owner) {
+        this.VIN = VIN;
+        this.Model = Model;
+        this.firm = firm;
+        this.number = number;
+        this.color = color;
+        this.owner = owner;
+    }
+    carEdit(name, Model, firm,number,color,owner) {
+        this.name = name;
+        this.Model = Model;
+        this.firm = firm;
+        this.number =number;
+        this.color =color;
+        this.owner =owner;
+    }
+}
+const carStuff = [
+    new car( '1457834',  'Q8', 'Audi','UO-898-OU','blue','sandro' ),
+    new car( '3473234',  'Q7', 'Audi','ER-898-HT','black','gio' )
 ];
-
 
 app.get('/carIndex', (req, res) => {
     res.render('carIndex', { carStuff })
 })
 app.post('/carIndex', (req, res) => {
     console.log(req.body);
-    const obje = {
-        VIN: req.body.VIN,
-        Model: req.body.Model,
-        firm: req.body.firm,
-        Number: req.body.Number,
-        color: req.body.color,
-        owner: req.body.owner
-    }
-
-
-    carStuff.push(obje);
+    const VIN = req.body.VIN;
+    const Model = req.body.Model;
+    const firm = req.body.firm;
+    const number = parseInt(req.body.number);
     
-
+    const color = req.body.color;
+    const owner = req.body.owner;
+    for (let car of carStuff) {
+        if (car.number === number) {
+            return res.send('car with this number already exists')
+        }
+    }
+    const cars= new car(VIN, Model, firm, number,color,owner);
+    carStuff.push(cars);
     res.render('carIndex', {})
 
 })
 app.get('/cars', (req, res) => {
     res.render('cars', { carStuff })
 })
+app.post('/cars', (req, res) => {
+    res.render('cars', { cars })
+})
+
 
 app.get('/cars/:VIN', (req, res) => {
-    const VIN = Number(req.params.VIN);
+    const VIN =Number(req.params.VIN);
     const mono = carStuff.find(mono => mono.VIN == VIN);
     res.render('car', { mono })
 })
-app.get('/search',(req,res) =>{
-    // var data= {
 
-    //     Abby: '8845',
-    //     David: '8871',
-    //     Jim: '8890',
-    //     Lewis: '8804',
-    //   };
-    // var returnLookUp = function(e) {
-    //     e.preventDefault();
-    //     var getInfo = document.getElementById("thisSearch");
-    //     document.getElementById("output").value = data[thisSearch.value];
-      
-    // }
-    // returnLookUp()
-    res.render('search',{})
-})
-app.post('/search', (req,res) =>{
-    res.render('search',{})
-})
 
 app.listen(Port, () => {
     console.log(`running on port like a boss - ${Port}`)

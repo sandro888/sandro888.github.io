@@ -8,6 +8,9 @@ html(lang="en")
         style
             include style.css
     body
+        a(href="/") home
+        br
+        br
         form(action="http://localhost:3000/carIndex" method="post")
             label(for="carFirm") 
                 input#carFirm(type="text" name="firm"  placeholder="firm")
@@ -16,7 +19,7 @@ html(lang="en")
             label(for="carVIN") 
                 input#carVIN(type="text" name="VIN"  placeholder="VIN")
             label(for="carGNumber") 
-                input#carGNumber(type="text" name="Number"  placeholder="Number")
+                input#carGNumber(type="text" name="number"  placeholder="number")
             label(for="carColor") 
                 input#carColor(type="text" name="color"  placeholder="color")
             label(for="carOwner") 

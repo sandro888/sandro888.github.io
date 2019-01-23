@@ -7,6 +7,9 @@ html(lang="en")
       
 
     body
+        a(href="http://localhost:3000/carIndex") home
+        br
+        br
         table
             tr
                 th VIN
@@ -15,6 +18,7 @@ html(lang="en")
                 th Number
                 th color
                 th owner
+                //- th
             
             
             for mono in carStuff
@@ -23,9 +27,9 @@ html(lang="en")
                         a(href=`http://localhost:3000/cars/${mono.VIN}`)= mono.VIN
                     td= mono.Model
                     td= mono.firm
-                    td= mono.Number
+                    td= mono.number
                     td= mono.color
                     td= mono.owner
-                    td
+                    //- td
                     
-                        button(type="submit" class="button" id="disable") disable            
+                        //- button(type="submit" class="button" id="disable") disable            

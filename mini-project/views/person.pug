@@ -6,15 +6,18 @@ head
       
 
 body
+    a(href="/") home
+    br
+    br
     table
         tr
             th id
             th name
             th surname
             th date
-            th disbale
+            //- th disbale
                 
-            
+        
         for your in people
             tr
                 td
@@ -22,8 +25,9 @@ body
                 td= your.name
                 td= your.surname
                 td= your.date
-                td
-                    button(type="submit" class="button" id="disable") disable      
+                //- td
+                    //- button(type="submit" class="button" id="disable") disable
+                         
                 
     //-                 button(type="submit" class="button" id="edit") Edit 
     //-                 form(action="http://localhost:3000/person/" method="post" id="formEdit" hidden )

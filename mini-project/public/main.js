@@ -4,4 +4,5 @@ window.onload = () =>{
     editBtn.addEventListener('click',() =>{
         editInfo.hidden = false;
     })
+  
 }
